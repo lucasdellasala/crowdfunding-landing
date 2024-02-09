@@ -19,6 +19,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-y: hidden; /* Evita el scrolling vertical en el body */
 }
 
 h1 {
@@ -32,22 +33,6 @@ h1 {
   justify-content: center;
 }
 
-.button {
-  margin: 2%;
-  padding: 1%;
-  height: 8em;
-  font-family: inherit;
-  color: #FFF;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  width: 15%;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(140, 123, 24);
-  border-radius: 1em;
-  border: white 2px solid;
-}
 
 .content {
   background-color: rgba(0,0,0,0.5);
@@ -68,20 +53,43 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Ajusta el ancho según tus necesidades */
-  z-index: -1; /* Coloca el banner detrás de los demás elementos */
+  width: 100%;
+  z-index: -1;
 }
 
 .profilePic {
-  width: 15%; /* Ajusta el tamaño según tus necesidades */
-  height: 15%; /* Ajusta el tamaño según tus necesidades */
-  border-radius: 50%; /* Hace el marco circular */
-  border: 5px solid  rgb(140, 123, 24);
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  border: 0.3rem solid  rgb(140, 123, 24);
 }
 
 .title {
-  font-size: 2em; /* Tamaño del título */
+  font-size: 2em;
   text-align: center;
-  color: #fff; /* Color del texto */
-  margin-top: 20px; /* Espacio entre la foto de perfil y el título */
+  color: #fff;
+  margin-top: 20px;
+}
+
+.buttonImage {
+  margin: 0.5rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .profilePic {
+    width: 40%;
+  }
+
+  .buttonSection {
+    flex-wrap: wrap;
+  }
+
+  body {
+    overflow-y: auto;
+  }
+
+  .buttonImage {
+    width: 7rem;
+  }
 }

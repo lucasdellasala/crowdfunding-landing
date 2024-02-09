@@ -1,12 +1,11 @@
-import { Contribution } from './../config'
 import Button from './Button'
 
 interface ButtonSectionProps {
-  buttons: Contribution;
+  buttons: string[];
 }
 
 function ButtonSection({ buttons }: Readonly<ButtonSectionProps>) {
-  return (<div className="buttonSection">{buttons.values.map((value: number) => <Button key={value} value={value} text={buttons.text}/>)}</div>)
+  return (<div className="buttonSection">{buttons.map((path: string) => <Button key={path} path={path}/>)}</div>)
 }
 
 export default ButtonSection
