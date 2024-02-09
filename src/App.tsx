@@ -1,30 +1,23 @@
-import './App.css'
-import { texts, buttons } from './config'
+import "./App.css";
+import { texts, buttonsContent } from "./config";
+import ButtonSection from "./components/ButtonSection";
+import Hero from "./components/Hero";
 
 function App() {
   return (
     <>
-      <h1>{texts.title}</h1>
-      <div className="card">
-        {
-          buttons.oneTime.map((value: number) => <button key={value}>{buttons.oneTimeText} ${value}</button>)
-        }
+      <img src={texts.banner} alt="banner" className="banner" />
+      <div className="content">
+        <Hero title={texts.title} profilePic={texts.profilePic} />
+        <ButtonSection buttons={buttonsContent.oneTime} />
+        <ButtonSection buttons={buttonsContent.suscription} />
+        <div className="card">
+          <p>{texts.description}</p>
+        </div>
+        <p className="read-the-docs">{texts.footer}</p>
       </div>
-      <div className="card">
-        {
-          buttons.suscription.map((value: number) => <button key={value}>{buttons.suscriptionText} ${value}</button>)
-        }
-      </div>
-      <div className="card">
-        <p>
-          {texts.description}
-        </p>
-      </div>
-      <p className="read-the-docs">
-        {texts.footer}
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
