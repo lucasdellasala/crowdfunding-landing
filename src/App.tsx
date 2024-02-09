@@ -6,9 +6,9 @@ import Hero from "./components/Hero";
 function App() {
   return (
     <>
-      <img src={texts.banner} alt="banner" className="banner" />
+      <img src="./../assets/banner.jpg" alt="banner" className="banner" />
       <div className="content">
-        <Hero title={texts.title} profilePic={texts.profilePic} />
+        <Hero title={texts.title} profilePic="./../assets/profilePic.png" />
         <ButtonSection buttons={buttonsContent.oneTime} />
         <ButtonSection buttons={buttonsContent.suscription} />
         <div className="card">
